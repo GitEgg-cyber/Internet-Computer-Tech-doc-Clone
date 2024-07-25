@@ -1,0 +1,203 @@
+<html>
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body{
+    font-family: "CircularXX", sans-serif;
+    display:block;
+    line-height: 1.5;
+    
+}
+#navbar header{
+    text-align: center;
+    margin: 0 10px 10px 0;
+    font-size: 1.5rem;
+    border-bottom: solid;
+    border-color: #3b00b980;
+    width: 100%;
+}
+#navbar{
+    position: fixed;
+    border-right: solid;
+    border-color: #3b00b980;
+    overflow: hidden;
+    width: 300px;
+    height: 100%;
+    z-index: 1;
+}
+#navbar li{
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+    border-bottom: solid;
+    border-color: #3b00b980;
+    margin: 0;
+}
+.nav-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.section{
+    z-index: -1;
+}
+#main-doc{
+    margin-left: 300px;
+        padding: 20px;
+        overflow-x: hidden; /* Prevent horizontal scrolling within the main content */
+  position: relative;
+        
+}
+.image-container {
+    width: 50vw; 
+    display: flex;
+    justify-content: center;
+
+}
+code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+    #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: solid;
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    #navbar li {
+        border-bottom: solid 0.5px;
+        border-color: #3b00b980;
+    }
+
+    #main-doc {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 85%
+    }
+}
+    </style>
+  </head>
+ 
+  <body>
+    <nav id="navbar">
+      <header><strong>Internet Computer</strong></header>
+        <ul>
+          <li><a class="nav-link" href="#Overview_of_ICP"> Overview of ICP</a></li>
+          <li><a class="nav-link" href="#Development_workflow"> Development workflow</a></li>
+          <li><a class="nav-link" href="#Installing_tools"> Installing tools</a></li>
+          <li><a class="nav-link" href="#Hello,_world!"> Hello, world!</a></li>
+          <li><a class="nav-link" href="#Developer_accounts"> Developer accounts</a></li>
+          <li><a class="nav-link" href="#Default_project_template"> Default project template</a></li>
+          <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Overview_of_ICP">
+        <header><strong>Overview of ICP</strong></header>
+        <p class="image-container">The Internet Computer Protocol (ICP) is a blockchain based on threshold cryptography, state machine replication, and a novel consensus algorithm.
+        <br>
+        <br>
+It was carefully designed to give smart contracts near native performance and scalability while maintaining the security of decentralized execution. In addition to classical DeFi smart contracts, such as ledgers and exchanges, ICP can run compute- and storage-heavy applications such as image classification fully on-chain.
+         <br>
+         <br>
+Another important design aspect of ICP is its seamless and secure integration with existing ecosystems. Smart contracts on ICP can host web assets and serve HTTP requests from users, thus fulfilling the promise of Web3. They can also interact with RPC nodes of other blockchains and Web2 servers through secure HTTP requests. These features, combined with threshold signatures, give smart contracts the ability to hold assets and make transactions on other blockchains such as Bitcoin and Ethereum.
+        </p>
+        <img class="image-container"src="https://internetcomputer.org/img/docs/icp-intro.png" alt="diagram showing how ICP works">
+        <p></p>
+      </section>
+      <section class="main-section" id="Development_workflow">
+        <header><strong>Development workflow</strong></header>
+          <p>The Internet Computer Protocol (ICP) accepts and executes smart contracts in the WebAssembly (Wasm) binary format. In theory, developers could write valid smart contracts directly in the Wasm bytecode. Since that would be too tedious and time consuming, the standard practice is to write smart contract code in a higher-level language, such as JavaScript/TypeScript, Motoko, Python, or Rust, then compile it into Wasm.
+          <br>
+          <br>
+The primary developer tool in the ICP ecosystem is dfx. It is a command line multi-tool that assists the developer throughout the entire development process, starting from the generation of developer keys and setting up a new project, to compiling, deploying, and managing smart contracts.</p>
+          <img class="image-container"src="https://internetcomputer.org/img/docs/developer-build.png">
+          <p>By default, dfx generates a project structure consisting of two smart contracts: the frontend canister and the backend canister. The frontend canister contains web assets such as JavaScript, HTML, CSS, and images that are served to the browser. The actual program logic of the smart contract is defined in the backend canister.</p>
+      </section>
+      <section class="main-section" id="Installing_tools">
+        <header><strong>Installing tools</strong></header>
+        <p>When developing on ICP, there are two primary tools used: dfx, a CLI tool used to create, deploy, and manage canisters, and a canister development kit (CDK) which provides an environment for writing canister code in different programming languages while supporting ICP features.</p>
+        <p>
+          Currently supported CDKs include:
+        </p>
+          <ul>
+            <li>Motoko: ICP's native programming language.</li>
+            <li>Rust CDK.</li>
+            <li>Kybra: Python CDK (Beta).</li>
+            <li>Azle: TypeScript CDK (Beta).</li>
+            <li>Bitfinity EVM for Solidity (Beta).</li>
+            <li>C++ CDK.</li>
+          </ul>
+        <code>Learning to code on the ICP network is easy as pie!</code>
+        
+        <p>If you use GitHub Codespaces or Gitpod to deploy your project, installing these dependencies is not necessary.
+
+        </p>
+        <code>Links to available Codespaces and Gitpod examples can be found in the hello world example.</code>
+      </section>
+      <section class="main-section" id="Hello,_world!">
+        <header><strong>Hello, world!</strong></header>
+        <p>This guide shows how to get started developing on ICP quickly by deploying your first 'Hello, world!' smart contract.</p>
+        <code>Choosing a developer environment</code>
+        <p>To deploy a simple 'Hello, world!' smart contract, you can use a variety of developer environments, such as:
+          <ul>
+            <li>Native installation of tools on Linux, Mac, or Windows (using WSL) systems.</li>
+            <li>Cloud-based environments such as Gitpod or GitHub Codespaces
+
+            </li>
+          </ul>
+        </p>
+      </section>
+      <section class="main-section" id="Developer_accounts">
+        <header><strong>Developer accounts</strong></header>
+        <p>On ICP developers accounts, or identities, use a private/public key pair for authentication. Accounts are identified by a principal which is a generic identifier value that is used for users, canisters, and potentially other future concepts. Each developer account's principal value is derived from the account's public key from the private/public key pair.
+        
+ICP developer accounts can be compared to a Bitcoin or Ethereum wallet address. One primary difference, however, is that ICP accounts do not have an initial balance.
+        </p>
+        <code>ICP identity terms</code>
+        <p>Other ICP identity-related terms you may come across include:</p>
+          <ul>
+            <li>Ledger account identifier: The identifier associated with your ICP ledger account.</li>
+            <li>Wallets: Used to store forms of currency. Developers can use a cycles wallet to send cycles to and from canisters, however the cycles ledger is the most optimal way for using and managing cycles.</li>
+            <li>Internet Identity: ICP's native authentication service. Internet Identity doesn't use usernames and passwords; instead it uses a passkey that is stored in your local device's hardware.</li>
+          </ul>
+      </section>
+      <section class="main-section" id="Default_project_template">
+        <header><strong>Default project template</strong></header>
+        <h1>Overview</h1>
+        <p>The dfx new project name command creates a new project directory, template files, and a new project name Git repository for your project. When creating new projects with dfx, only alphanumeric characters and underscores should be used. This is to assure that project names are valid within Motoko, JavaScript, and other contexts.
+
+        </p>
+        <h1>Exploring the default project structure</h1>
+        <p>By default, the project structure will resemble the following:
+        </p>
+        <code>A + B = C</code>
+      </section>
+      <section class="main-section" id="Reference">
+        <header><strong>Reference</strong></header>
+          <p>All the information here was gathered from the official<a href="https://internetcomputer.org/docs/current/developer-docs/getting-started/overview-of-icp" target=""> ICP website</a></p>
+      </section>
+    </main>  
